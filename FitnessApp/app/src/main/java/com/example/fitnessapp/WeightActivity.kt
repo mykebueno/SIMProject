@@ -85,6 +85,7 @@ class WeightActivity : AppCompatActivity() {
                         it.date = Calendar.getInstance().time
                         it.weight = weightValue
                         myDatabase.DAO().updateWeight(it)
+                        Log.d("Weight", "Updated Weight")
                     }
                 }
             }
@@ -93,7 +94,7 @@ class WeightActivity : AppCompatActivity() {
         {
             var weight: Weight = Weight(weight = weightValue, date=Calendar.getInstance().time, userId = userMain?.userId)
 
-            Log.d("Weight", weight.weight.toString())
+            Log.d("Weight", "Inserted New Value Weight: " + weight.weight.toString())
 
             myDatabase.DAO().insertWeights(weight)
             alertWeight.visibility = View.VISIBLE

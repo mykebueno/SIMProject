@@ -69,4 +69,19 @@ interface MyDao  {
 
     @Query("select * from calories")
     fun getAllCalories(): List<Calories>
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun insertSteps(vararg steps: Steps)
+
+    @Query("select * from steps where date = :dateInput")
+    fun getSteps(dateInput: Date):Steps
+
+    @Query("select * from steps where userId = :userInput")
+    fun getStepsWithUserId(userInput: Long):List<Steps>
+
+    @Query("select * from steps")
+    fun getAllSteps(): List<Steps>
+
+    @Update
+    fun updateSteps(steps: Steps?)
 }

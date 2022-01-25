@@ -2,6 +2,7 @@ package com.example.fitnessapp.fragments
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -184,7 +185,53 @@ class HomeFragment : Fragment() {
         }
     }
 
+    override fun onDestroy() {
+        var myDatabase: MyDatabase? = view?.let { MyDatabase.build(it.context) }
 
+        var stepsInDatabase: List<Steps>? = userMain?.userId?.let { myDatabase?.DAO()?.getStepsWithUserId(it) }
+
+        var todayStepsFound: Boolean = false
+
+        if(stepsInDatabase != null)
+        {
+            var rightNow = Calendar.getInstance()
+            var day_date = SimpleDateFormat("dd")
+            var day_now: Int = day_date.format(rightNow.getTime()).toInt()
+
+            var day_steps: Int
+
+            Log.d("Steps", "List of Steps not null!")
+
+            stepsInDatabase.forEach {
+                day_steps = day_date.format(Calendar.getInstance().getTime()).toInt()
+
+                if(day_steps == day_now)
+                {
+                    it.date = Calendar.getInstance().time
+                    it.steps = sharedViewModel.sensorModel.currentSteps.value
+                    if (myDatabase != null) {
+                        myDatabase.DAO().updateSteps(it)
+                    }
+                    Log.d("Steps", "Updated Steps")
+                    todayStepsFound = true
+                }
+            }
+        }
+
+        if(!todayStepsFound)
+        {
+            var steps: Steps = Steps(date = Calendar.getInstance().time, userId = userMain?.userId , steps = sharedViewModel.sensorModel.currentSteps.value)
+
+            Log.d("Steps", "Inserted New Value Steps: " + steps.steps + "with user ID: " + steps.userId)
+
+            if (myDatabase != null) {
+                myDatabase.DAO().insertSteps(steps)
+            }
+        }
+
+        Log.d("Estado do HomeFragment", "Destruido!!")
+        super.onDestroy()
+    }
 
     override fun onResume() {
 

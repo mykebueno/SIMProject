@@ -54,6 +54,25 @@ data class Calories(
     var userId: Long? = null
 )
 
+@Entity
+data class Steps(
+    @PrimaryKey(autoGenerate = true)
+    var stepsId: Long? = null,
+    var steps: Int? = null,
+    var date: Date? = null,
+    var userId: Long? = null
+)
+
+// 1 -- 1 relationship: 1 user, 1 information
+data class UserAndSteps(
+    @Embedded val user: User,
+    @Relation(
+        parentColumn = "userId",
+        entityColumn = "userId"
+    )
+    val steps: Steps
+)
+
 // 1 -- 1 relationship: 1 user, 1 information
 data class UserAndInformation(
     @Embedded val user: User,
