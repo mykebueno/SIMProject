@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/David/Documents/GitHub/SIMProject/FitnessApp/app/src/main/res/layout/activity_login.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/David/Documents/GitHub/SIMProject/FitnessApp/app/src/main/res/layout/activity_main.xml" value="0.32065217391304346" />
+        <entry key="..\:/Users/David/Documents/GitHub/SIMProject/FitnessApp/app/src/main/res/layout/activity_register.xml" value="0.23125" />
+        <entry key="..\:/Users/David/Documents/GitHub/SIMProject/FitnessApp/app/src/main/res/layout/actrivity_notification.xml" value="0.2485207100591716" />
         <entry key="..\:/Users/mykyt/AndroidStudioProjects/FitnessApp/app/src/main/res/drawable/custom_button.xml" value="0.3828125" />
         <entry key="..\:/Users/mykyt/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/mykyt/AndroidStudioProjects/FitnessApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />

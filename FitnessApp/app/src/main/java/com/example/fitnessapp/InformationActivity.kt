@@ -103,16 +103,16 @@ class InformationActivity : AppCompatActivity() {
             gender = "Female"
         }
 
-        val info: Information = Information(age= age.text.toString().toLong(), height = seekBarHeight.progress.toString().toLong(), weight = seekBarWeight.progress.toString().toLong(), gender = gender, userId = userMain?.userId)
+       /* val info: Information = Information(age= age.text.toString().toLong(), height = seekBarHeight.progress.toString().toLong(), weight = seekBarWeight.progress.toString().toLong(), gender = gender, userId = userMain?.userId)
 
         Log.d("Utilizador", "Exameplo")
         Log.d("Age", info.age.toString())
         Log.d("Height", info.height.toString())
-        Log.d("Weight", info.weight.toString())
+        //Log.d("Weight", info.weight.toString())
         info.gender?.let { Log.d("Gender", it) }
 
         myDatabase.DAO().insertInformation(info)
-
+        */
         val intent = Intent(this, MainActivity::class.java)
         intent.putExtra("user", userMain as Serializable)
         startActivity(intent)
