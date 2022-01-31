@@ -1,437 +1,371 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".fragments.HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date"
+        android:textColor="#BA6846E1"
+        android:drawableStart="@drawable/ic_sunny"
+        android:drawablePadding="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewGreet"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/textViewGreet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hi USER!"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewMetrics"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDate"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/textViewMetrics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Metrics"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewsInfo"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGreet"
+        android:layout_marginBottom="10dp"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+        android:id="@+id/cardViewsInfo"
+        android:layout_width="409dp"
         android:layout_height="wrap_content"
-        tools:context=".fragments.HomeFragment"
-        android:background="#CAFDF6">
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="167dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMetrics"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
-            android:id="@+id/textViewDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/date"
-            android:textColor="#BA6846E1"
-            android:drawableStart="@drawable/ic_sunny"
-            android:drawablePadding="5dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/textViewGreet"
-            app:layout_constraintHorizontal_bias="0"
-            android:layout_marginLeft="30dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewCalories"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:backgroundTint="#6D36C6"
+            app:cardCornerRadius="15dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.3"
-            app:layout_constraintVertical_chainStyle="packed"
-            android:layout_marginBottom="8dp"/>
-
-        <TextView
-            android:id="@+id/textViewGreet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hi USER!"
-            android:textColor="#000000"
-            android:textSize="26sp"
-            app:layout_constraintHorizontal_bias="0"
-            android:layout_marginLeft="30dp"
-            app:layout_constraintBottom_toTopOf="@+id/textViewMetrics"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewDate"
-            android:layout_marginBottom="20dp"/>
+            app:layout_constraintRight_toLeftOf="@+id/cardViewWeight"
+            app:layout_constraintBottom_toTopOf="@+id/cardViewWater"
+            android:layout_marginBottom="10dp">
 
-        <TextView
-            android:id="@+id/textViewMetrics"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Metrics"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/cardViewsInfo"
-            app:layout_constraintHorizontal_bias="0"
-            android:layout_marginLeft="30dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="addCalories">
+
+                <TextView
+                    android:id="@+id/textViewCalories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calories"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/progressBarCalories"
+                    app:layout_constraintHorizontal_bias="0.2"/>
+
+                <ProgressBar
+                    android:id="@+id/progressBarCalories"
+                    style="?android:attr/progressBarStyle"
+                    android:progressDrawable="@drawable/custom_calories_progress"
+                    android:indeterminateOnly="false"
+                    android:progress="20"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:layout_constraintTop_toBottomOf="@id/textViewCalories"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewCaloriesValue"
+                    />
+
+                <TextView
+                    android:id="@+id/textViewCaloriesValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="500"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintTop_toBottomOf="@id/progressBarCalories"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/textViewCaloriesValue2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintHorizontal_chainStyle="packed"/>
+
+                <TextView
+                    android:id="@+id/textViewCaloriesValue2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" cal"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@id/progressBarCalories"
+                    app:layout_constraintLeft_toRightOf="@id/textViewCaloriesValue"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewWeight"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:backgroundTint="@color/purple_200"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/cardViewCalories"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/cardViewSteps"
+            android:layout_marginBottom="10dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="addWeight">
+
+                <TextView
+                    android:id="@+id/textViewKg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weight"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toTopOf="@+id/progressBarKg"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/progressBarKg"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/weight"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewKgValue"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textViewKg" />
+
+                <TextView
+                    android:id="@+id/textViewKgValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="76"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/textViewKgValue2"
+                    app:layout_constraintTop_toBottomOf="@id/progressBarKg" />
+
+                <TextView
+                    android:id="@+id/textViewKgValue2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" kg"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/textViewKgValue"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/progressBarKg" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewWater"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:backgroundTint="#5172EA"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintTop_toBottomOf="@id/cardViewCalories"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/cardViewSteps"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:onClick="addWater">
+
+                <TextView
+                    android:id="@+id/textViewWater"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Water"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/progressBarWater"
+                    app:layout_constraintHorizontal_bias="0.2"/>
+
+                <ImageView
+                    android:id="@+id/progressBarWater"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/textViewWater"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewWaterValue"
+                    android:src="@drawable/water"/>
+
+                <TextView
+                    android:id="@+id/textViewWaterValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="750"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintTop_toBottomOf="@id/progressBarWater"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/textViewWaterValue2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintHorizontal_chainStyle="packed"/>
+
+                <TextView
+                    android:id="@+id/textViewWaterValue2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" ml"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@id/progressBarWater"
+                    app:layout_constraintLeft_toRightOf="@id/textViewWaterValue"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewSteps"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:backgroundTint="#4C4791"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintTop_toBottomOf="@id/cardViewWeight"
+            app:layout_constraintLeft_toRightOf="@id/cardViewWater"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewGreet"
-            android:layout_marginBottom="10dp"/>
+            app:layout_constraintBottom_toBottomOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cardViewsInfo"
-            android:layout_width="409dp"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="167dp"
-            app:layout_constraintTop_toBottomOf="@+id/textViewMetrics"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/exercicios">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardViewCalories"
-                android:layout_width="160dp"
-                android:layout_height="190dp"
-                android:backgroundTint="#6D36C6"
-                app:cardCornerRadius="15dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/cardViewWeight"
-                app:layout_constraintBottom_toTopOf="@+id/cardViewWater"
-                android:layout_marginBottom="10dp">
+                <TextView
+                    android:id="@+id/textViewSteps"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Steps"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/progressBarSteps"
+                    app:layout_constraintHorizontal_bias="0.2" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:onClick="addCalories">
+                <ProgressBar
+                    android:id="@+id/progressBarSteps"
+                    style="?android:attr/progressBarStyle"
+                    android:progressDrawable="@drawable/custom_steps_progress"
+                    android:indeterminateOnly="false"
+                    android:progress="0"
+                    android:max="10000"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:layout_constraintTop_toBottomOf="@id/textViewSteps"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewStepsValue" />
 
-                    <TextView
-                        android:id="@+id/textViewCalories"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Calories"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintBottom_toTopOf="@+id/progressBarCalories"
-                        app:layout_constraintHorizontal_bias="0.2"/>
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic__run"
+                    app:layout_constraintTop_toBottomOf="@id/textViewSteps"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewStepsValue"
+                    app:tint="@color/white" />
 
-                    <ProgressBar
-                        android:id="@+id/progressBarCalories"
-                        style="?android:attr/progressBarStyle"
-                        android:progressDrawable="@drawable/custom_calories_progress"
-                        android:indeterminateOnly="false"
-                        android:progress="20"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        app:layout_constraintTop_toBottomOf="@id/textViewCalories"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintBottom_toTopOf="@+id/textViewCaloriesValue"
-                        />
+                <TextView
+                    android:id="@+id/textViewStepsValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintTop_toBottomOf="@id/progressBarSteps"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/textViewStepsValue2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintHorizontal_chainStyle="packed" />
 
-                    <TextView
-                        android:id="@+id/textViewCaloriesValue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="500"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        app:layout_constraintTop_toBottomOf="@id/progressBarCalories"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toLeftOf="@id/textViewCaloriesValue2"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_bias="0.2"
-                        app:layout_constraintHorizontal_chainStyle="packed"/>
+                <TextView
+                    android:id="@+id/textViewStepsValue2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" steps"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteX="66dp"
+                    tools:layout_editor_absoluteY="151dp"
+                    app:layout_constraintTop_toBottomOf="@id/progressBarSteps"
+                    app:layout_constraintLeft_toRightOf="@id/textViewStepsValue"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
 
-                    <TextView
-                        android:id="@+id/textViewCaloriesValue2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" cal"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        app:layout_constraintTop_toBottomOf="@id/progressBarCalories"
-                        app:layout_constraintLeft_toRightOf="@id/textViewCaloriesValue"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardViewWeight"
-                android:layout_width="160dp"
-                android:layout_height="190dp"
-                android:backgroundTint="@color/purple_200"
-                app:cardCornerRadius="15dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toRightOf="@id/cardViewCalories"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/cardViewSteps"
-                android:layout_marginBottom="10dp">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:onClick="addWeight">
-
-                    <TextView
-                        android:id="@+id/textViewKg"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Weight"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toTopOf="@+id/progressBarKg"
-                        app:layout_constraintHorizontal_bias="0.2"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ImageView
-                        android:id="@+id/progressBarKg"
-                        style="?android:attr/progressBarStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/weight"
-                        app:layout_constraintBottom_toTopOf="@+id/textViewKgValue"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/textViewKg" />
-
-                    <TextView
-                        android:id="@+id/textViewKgValue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="76"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_bias="0.2"
-                        app:layout_constraintHorizontal_chainStyle="packed"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toLeftOf="@id/textViewKgValue2"
-                        app:layout_constraintTop_toBottomOf="@id/progressBarKg" />
-
-                    <TextView
-                        android:id="@+id/textViewKgValue2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" kg"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toRightOf="@id/textViewKgValue"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/progressBarKg" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardViewWater"
-                android:layout_width="160dp"
-                android:layout_height="190dp"
-                android:backgroundTint="#5172EA"
-                app:cardCornerRadius="15dp"
-                app:layout_constraintTop_toBottomOf="@id/cardViewCalories"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@id/cardViewSteps"
-                app:layout_constraintBottom_toBottomOf="parent">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:onClick="addWater">
-
-                    <TextView
-                        android:id="@+id/textViewWater"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Water"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintBottom_toTopOf="@+id/progressBarWater"
-                        app:layout_constraintHorizontal_bias="0.2"/>
-
-                    <ImageView
-                        android:id="@+id/progressBarWater"
-                        style="?android:attr/progressBarStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@id/textViewWater"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintBottom_toTopOf="@+id/textViewWaterValue"
-                        android:src="@drawable/water"/>
-
-                    <TextView
-                        android:id="@+id/textViewWaterValue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="750"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        app:layout_constraintTop_toBottomOf="@id/progressBarWater"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toLeftOf="@id/textViewWaterValue2"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_bias="0.2"
-                        app:layout_constraintHorizontal_chainStyle="packed"/>
-
-                    <TextView
-                        android:id="@+id/textViewWaterValue2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" ml"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        app:layout_constraintTop_toBottomOf="@id/progressBarWater"
-                        app:layout_constraintLeft_toRightOf="@id/textViewWaterValue"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardViewSteps"
-                android:layout_width="160dp"
-                android:layout_height="190dp"
-                android:backgroundTint="#4C4791"
-                app:cardCornerRadius="15dp"
-                app:layout_constraintTop_toBottomOf="@id/cardViewWeight"
-                app:layout_constraintLeft_toRightOf="@id/cardViewWater"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textViewSteps"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Steps"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintBottom_toTopOf="@+id/progressBarSteps"
-                        app:layout_constraintHorizontal_bias="0.2" />
-
-                    <ProgressBar
-                        android:id="@+id/progressBarSteps"
-                        style="?android:attr/progressBarStyle"
-                        android:progressDrawable="@drawable/custom_steps_progress"
-                        android:indeterminateOnly="false"
-                        android:progress="0"
-                        android:max="10000"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        app:layout_constraintTop_toBottomOf="@id/textViewSteps"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintBottom_toTopOf="@+id/textViewStepsValue" />
-
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic__run"
-                        app:layout_constraintTop_toBottomOf="@id/textViewSteps"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintBottom_toTopOf="@+id/textViewStepsValue"
-                        app:tint="@color/white" />
-
-                    <TextView
-                        android:id="@+id/textViewStepsValue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        app:layout_constraintTop_toBottomOf="@id/progressBarSteps"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toLeftOf="@id/textViewStepsValue2"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_bias="0.2"
-                        app:layout_constraintHorizontal_chainStyle="packed" />
-
-                    <TextView
-                        android:id="@+id/textViewStepsValue2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" steps"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        tools:layout_editor_absoluteX="66dp"
-                        tools:layout_editor_absoluteY="151dp"
-                        app:layout_constraintTop_toBottomOf="@id/progressBarSteps"
-                        app:layout_constraintLeft_toRightOf="@id/textViewStepsValue"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.cardview.widget.CardView>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <TextView
-            android:id="@+id/exercicios"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Exercicios"
-            android:layout_marginTop="80dp"
-            app:layout_constraintHorizontal_bias="0"
-            android:layout_marginLeft="30dp"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/buttonIniciante"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardViewsInfo" />
-
-        <ImageButton
-            android:id="@+id/buttonIniciante"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:text="Iniciante"
-            android:background="@drawable/iniciante"
-            app:layout_constraintBottom_toTopOf="@+id/buttonIntermedio"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/exercicios" />
-
-        <ImageButton
-            android:id="@+id/buttonIntermedio"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:text="Intermédio"
-            android:background="@drawable/intermedio"
-            tools:layout_editor_absoluteX="165dp"
-            tools:layout_editor_absoluteY="583dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/buttonAvançado"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonIniciante"/>
-        />
-
-        <ImageButton
-            android:id="@+id/buttonAvançado"
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:text="Avançado"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="90dp"
-            tools:layout_editor_absoluteX="149dp"
-            tools:layout_editor_absoluteY="546dp"
-            android:background="@drawable/avancado"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonIntermedio"/>
-        />
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
