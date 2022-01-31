@@ -47,7 +47,7 @@ caloriesRouter.route('/:userId')
 .get((req, res, next) => {
   Calories.find({ userId: req.params.userId })
   .then((calorie) => {
-      console.log('calorie Created', calorie);
+      console.log('Calories Created', calorie);
       res.statusCode = 200;
       res.setHeader('Content-Type', 'application/json');
       res.json(calorie);
@@ -63,7 +63,7 @@ caloriesRouter.route('/:userId')
       $set: req.body
   }, {new: true})
   .then((calorie) => {
-      console.log('calorie Updated', calorie);
+      console.log('calories Updated', calorie);
       res.statusCode = 200;
       res.setHeader('Content-Type', 'application/json');
       res.json(calorie);
