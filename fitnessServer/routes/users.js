@@ -31,7 +31,7 @@ userRouter.route('/')
 })
 .put((req,res,next) => {
   res.statusCode = 403;
-  res.end('PUT operation not supported on /dishes');
+  res.end('PUT operation not supported on /users');
 })
 .delete((req, res, next) => {
   Users.remove({})
@@ -56,7 +56,7 @@ userRouter.route('/:userId')
 })
 .post((req,res,next) => {
   res.statusCode = 403;
-  res.end('POST operation not supported on /dishes/' + req.params.userId);
+  res.end('POST operation not supported on /users/' + req.params.userId);
 })
 .put((req,res,next) => {
   Users.findByIdAndUpdate(req.params.userId, {
