@@ -13,6 +13,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessApp">
         <activity
+            android:name=".StepsChartActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WaterChartActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CaloriesChartActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WeightChartActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ChartsActivity"
+            android:exported="true" />
+        <activity
             android:name=".CaloriesActivity"
             android:exported="true" />
         <activity

@@ -99,13 +99,17 @@ class HomeFragment : Fragment() {
             // queremos mostrar a informaçao caso ja tenhamos uma quantidade de agua adicionada
             var rightNow = Calendar.getInstance()
             var day_date = SimpleDateFormat("dd")
+            var month_date = SimpleDateFormat("mm")
             var day_now: Int = day_date.format(rightNow.getTime()).toInt()
+            var month_now: Int = month_date.format(rightNow.getTime()).toInt()
 
             var day_water: Int
+            var month_water: Int
 
             waters.forEach {
                 day_water = day_date.format(Calendar.getInstance().getTime()).toInt()
-                if(day_water == day_now)
+                month_water = month_date.format(Calendar.getInstance().getTime()).toInt()
+                if(day_water == day_now && month_water == month_now)
                 {
                     waterValue += it.water!!
                 }
@@ -127,13 +131,17 @@ class HomeFragment : Fragment() {
             // queremos mostrar a informaçao caso ja tenhamos uma quantidade de agua adicionada
             var rightNow = Calendar.getInstance()
             var day_date = SimpleDateFormat("dd")
+            var month_date = SimpleDateFormat("mm")
             var day_now: Int = day_date.format(rightNow.getTime()).toInt()
+            var month_now: Int = month_date.format(rightNow.getTime()).toInt()
 
             var day_weight: Int
+            var month_weight: Int
 
             weights.forEach {
                 day_weight = day_date.format(Calendar.getInstance().getTime()).toInt()
-                if(day_weight == day_now)
+                month_weight = month_date.format(Calendar.getInstance().getTime()).toInt()
+                if(day_weight == day_now && month_weight == month_now )
                 {
                     weightValue = it.weight!!
                 }
@@ -161,13 +169,17 @@ class HomeFragment : Fragment() {
             // queremos mostrar a informaçao caso ja tenhamos uma quantidade de agua adicionada
             var rightNow = Calendar.getInstance()
             var day_date = SimpleDateFormat("dd")
+            var month_date = SimpleDateFormat("mm")
             var day_now: Int = day_date.format(rightNow.getTime()).toInt()
+            var month_now: Int = month_date.format(rightNow.getTime()).toInt()
 
             var day_calories: Int
+            var month_calories: Int
 
             calories.forEach {
                 day_calories = day_date.format(Calendar.getInstance().getTime()).toInt()
-                if(day_calories == day_now)
+                month_calories = month_date.format(Calendar.getInstance().getTime()).toInt()
+                if(day_calories == day_now && month_calories == month_now )
                 {
                     caloriesValue += it.calories!!
                 }
@@ -196,16 +208,20 @@ class HomeFragment : Fragment() {
         {
             var rightNow = Calendar.getInstance()
             var day_date = SimpleDateFormat("dd")
+            var month_date = SimpleDateFormat("mm")
             var day_now: Int = day_date.format(rightNow.getTime()).toInt()
+            var month_now: Int = month_date.format(rightNow.getTime()).toInt()
 
             var day_steps: Int
+            var month_steps: Int
 
             Log.d("Steps", "List of Steps not null!")
 
             stepsInDatabase.forEach {
                 day_steps = day_date.format(Calendar.getInstance().getTime()).toInt()
+                month_steps = month_date.format(Calendar.getInstance().getTime()).toInt()
 
-                if(day_steps == day_now)
+                if(day_steps == day_now && month_steps == month_now)
                 {
                     it.date = Calendar.getInstance().time
                     it.steps = sharedViewModel.sensorModel.currentSteps.value

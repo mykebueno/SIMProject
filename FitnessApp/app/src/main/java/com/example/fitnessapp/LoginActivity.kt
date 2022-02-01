@@ -9,11 +9,13 @@ import android.widget.EditText
 import android.widget.TextView
 import com.example.fitnessapp.database.MyDatabase
 import com.example.fitnessapp.database.User
+import java.util.*
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        Log.d("Date Testing", Calendar.getInstance().getTime().toString())
     }
 
     //  Register functions

@@ -57,6 +57,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cardViewsInfo"
+        android:onClick="openCharts"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="1dp"

@@ -35,13 +35,17 @@ class WeightActivity : AppCompatActivity() {
             // queremos mostrar a informaçao caso ja tenhamos uma quantidade de agua adicionada
             var rightNow = Calendar.getInstance()
             var day_date = SimpleDateFormat("dd")
+            var month_date = SimpleDateFormat("mm")
             var day_now: Int = day_date.format(rightNow.getTime()).toInt()
+            var month_now: Int = month_date.format(rightNow.getTime()).toInt()
 
             var day_weight: Int
+            var month_weight: Int
 
             weights.forEach {
                 day_weight = day_date.format(Calendar.getInstance().getTime()).toInt()
-                if(day_weight == day_now)
+                month_weight = month_date.format(Calendar.getInstance().getTime()).toInt()
+                if(day_weight == day_now && month_weight == month_now )
                 {
                     //vamos avisar que ja introduziu o peso hoje!
                     alertWeight.visibility = View.VISIBLE

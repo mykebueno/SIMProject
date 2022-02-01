@@ -1,14 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".fragments.HomeFragment">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/textViewDate2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="8dp"
+            android:drawableStart="@drawable/ic_sunny"
+            android:drawablePadding="5dp"
+            android:text="@string/date"
+            android:textColor="#BA6846E1"
+            app:layout_constraintBottom_toTopOf="@+id/textViewGreet2"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/textViewGreet2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Hi USER!\nSee your stats down below!"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDate2"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewWeight"/>
+
+        <ImageView
+            android:id="@+id/imageViewWeight"
+            android:layout_width="350dp"
+            android:layout_height="90dp"
+            tools:layout_editor_absoluteX="30dp"
+            tools:layout_editor_absoluteY="142dp"
+            tools:src="@drawable/weightstats"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewGreet2"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewCalories"
+            android:onClick="openWeightCharts"/>
+
+        <ImageView
+            android:id="@+id/imageViewCalories"
+            android:layout_width="350dp"
+            android:layout_height="90dp"
+            android:src="@drawable/caloriesstats"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerCrop"
+            tools:layout_editor_absoluteX="30dp"
+            tools:layout_editor_absoluteY="254dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewWeight"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewWater"
+            android:onClick="openCaloriesCharts"/>
+
+        <ImageView
+            android:id="@+id/imageViewWater"
+            android:layout_width="350dp"
+            android:layout_height="90dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/waterstats"
+            tools:layout_editor_absoluteX="30dp"
+            android:layout_marginBottom="10dp"
+            tools:layout_editor_absoluteY="365dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewCalories"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewSteps"
+            android:onClick="openWaterCharts"/>
+
+        <ImageView
+            android:id="@+id/imageViewSteps"
+            android:layout_width="350dp"
+            android:layout_height="90dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/stepsstats"
+            android:layout_marginBottom="10dp"
+            tools:layout_editor_absoluteX="30dp"
+            tools:layout_editor_absoluteY="478dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewWater"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:onClick="openStepsCharts"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
