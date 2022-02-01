@@ -6,6 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.fitnessapp.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.content.Intent
+import android.widget.*
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +40,21 @@ class SettingsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_settings, container, false)
+
+        /*var btnShareToOtherApps = findViewById<BottomNavigationView>(R.id.btnShareToOtherApps)
+
+        btnShareToOtherApps.setOnClickListener{
+
+            val message: String = "Experimenta a Fitness App"
+
+            val intent = Intent()
+            intent.action = Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT, message)
+            intent.type = "text/plain"
+
+            startActivity(Intent.createChooser(intent,"Share to:"))
+
+        }*/
     }
 
     companion object {

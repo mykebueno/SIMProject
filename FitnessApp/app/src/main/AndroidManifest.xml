@@ -13,6 +13,72 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessApp">
         <activity
+            android:name=".Politica_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Avaliar_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".about_us_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".avancado_perna_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".avancado_peito_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".avancado_costas_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".avancado_braco_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".intermedio_perna_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".intermedio_peito_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".intermedio_costas_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".fragments.intermedio_costas_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".intermedio_braco_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".iniciante_perna_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".iniciante_peito_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".iniciante_costas_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".iniciante_braco_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Avancado_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Intermedio_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".fragments.Avancado_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Intermedia_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Iniciante_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".selecao_nivel_Activity"
+            android:exported="false" />
+        <activity
             android:name=".CaloriesActivity"
             android:exported="true" />
         <activity
