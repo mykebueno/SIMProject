@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
 
         var navBar = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
+
         navBar.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.ic_person -> replaceFragment(profileFragment)
@@ -152,6 +153,54 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, CaloriesActivity::class.java)
         intent.putExtra("user", userMain as Serializable)
         startActivity(intent)
+    }
+
+    fun treinoIniciante(view: View)
+    {
+        val intent = Intent(this, Iniciante_Activity::class.java)
+        startActivity(intent)
+    }
+
+    fun treinoIntermedio(view: View)
+    {
+        val intent = Intent(this, Intermedio_Activity::class.java)
+        startActivity(intent)
+    }
+
+    fun treinoAvancado(view: View)
+    {
+        val intent = Intent(this, Avancado_Activity::class.java)
+        startActivity(intent)
+    }
+
+    fun aboutUs(view: View)
+    {
+        val intent = Intent(this, about_us_Activity::class.java)
+        startActivity(intent)
+    }
+
+    fun privacidade(view: View)
+    {
+        val intent = Intent(this, Politica_Activity::class.java)
+        startActivity(intent)
+    }
+
+    fun avaliar(view: View)
+    {
+        val intent = Intent(this, Avaliar_Activity::class.java)
+        startActivity(intent)
+    }
+
+    fun partilha(view: View)
+    {
+        val message: String = "Experimenta a Fitness App"
+
+        val intent = Intent()
+        intent.action = Intent.ACTION_SEND
+        intent.putExtra(Intent.EXTRA_TEXT, message)
+        intent.type = "text/plain"
+
+        startActivity(Intent.createChooser(intent,"Share to:"))
     }
 
     override fun onResume() {
