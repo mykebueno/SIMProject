@@ -43,14 +43,11 @@ class CaloriesActivity : AppCompatActivity() {
         {
             // queremos mostrar a informaçao caso ja tenhamos uma quantidade de agua adicionada
             var rightNow = Calendar.getInstance()
-            var day_date = SimpleDateFormat("dd")
-            var day_now: Int = day_date.format(rightNow.getTime()).toInt()
-
-            var day_calories: Int
+            var date = SimpleDateFormat("yyyy-MM-dd")
+            var dateToday = date.format(rightNow.time)
 
             calories.forEach {
-                day_calories = day_date.format(Calendar.getInstance().getTime()).toInt()
-                if(day_calories == day_now)
+                if(dateToday == date.format(it.date))
                 {
                     caloriesValue += it.calories!!
                 }

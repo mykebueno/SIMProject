@@ -14,10 +14,7 @@ import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
-import com.example.fitnessapp.database.Information
-import com.example.fitnessapp.database.MyDatabase
-import com.example.fitnessapp.database.User
-import com.example.fitnessapp.database.Water
+import com.example.fitnessapp.database.*
 import com.example.fitnessapp.fragments.HomeFragment
 import com.example.fitnessapp.fragments.ProfileFragment
 import com.example.fitnessapp.fragments.SettingsFragment
@@ -54,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
         navBar.setOnItemSelectedListener {
             when(it.itemId){
-                R.id.ic_person -> replaceFragment(profileFragment)
+                R.id.ic_person -> replaceWithProfileFragment(profileFragment)
                 R.id.ic_home -> replaceWithHomeFragment(homeFragment)
                 R.id.ic_settings -> replaceFragment(settingsFragment)
             }
@@ -64,11 +61,22 @@ class MainActivity : AppCompatActivity() {
         obtainPermissions()
 
         val sensorModel = SensorModel()
-        
+
         Toast.makeText(this, sensorModel.statusMessage, Toast.LENGTH_SHORT).show()
     }
 
     private fun replaceWithHomeFragment(fragment : HomeFragment)
+    {
+        if(fragment != null)
+        {
+            val transaction = supportFragmentManager.beginTransaction()
+            userMain?.let { fragment.setUser(it) }
+            transaction.replace(R.id.fragment_container, fragment)
+            transaction.commit()
+        }
+    }
+
+    private fun replaceWithProfileFragment(fragment : ProfileFragment)
     {
         if(fragment != null)
         {
@@ -203,8 +211,41 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent.createChooser(intent,"Share to:"))
     }
 
+    fun openCharts(view: View)
+    {
+        val intent = Intent(this, ChartsActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun openCaloriesCharts(view: View)
+    {
+        val intent = Intent(this, CaloriesChartActivity::class.java)
+        intent.putExtra("user", userMain as Serializable)
+        startActivity(intent)
+    }
+
+    fun openWaterCharts(view: View)
+    {
+        val intent = Intent(this, WaterChartActivity::class.java)
+        intent.putExtra("user", userMain as Serializable)
+        startActivity(intent)
+    }
+
+    fun openWeightCharts(view: View)
+    {
+        val intent = Intent(this, WeightChartActivity::class.java)
+        intent.putExtra("user", userMain as Serializable)
+        startActivity(intent)
+    }
+
+    fun openStepsCharts(view: View)
+    {
+        val intent = Intent(this, StepsChartActivity::class.java)
+        intent.putExtra("user", userMain as Serializable)
+        startActivity(intent)
+    }
+
     override fun onResume() {
         super.onResume()
-
     }
 }

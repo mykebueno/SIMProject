@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -78,6 +79,21 @@
         <activity
             android:name=".selecao_nivel_Activity"
             android:exported="false" />
+        <activity
+            android:name=".StepsChartActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WaterChartActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CaloriesChartActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WeightChartActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ChartsActivity"
+            android:exported="true" />
         <activity
             android:name=".CaloriesActivity"
             android:exported="true" />

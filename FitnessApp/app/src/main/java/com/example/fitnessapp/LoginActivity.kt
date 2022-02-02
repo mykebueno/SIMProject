@@ -9,11 +9,18 @@ import android.widget.EditText
 import android.widget.TextView
 import com.example.fitnessapp.database.MyDatabase
 import com.example.fitnessapp.database.User
+import java.text.SimpleDateFormat
+import java.util.*
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        var date = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'" )
+        var date_now = date.format(Calendar.getInstance().getTime())
+        date.format(Calendar.getInstance().getTime())
+
     }
 
     //  Register functions
