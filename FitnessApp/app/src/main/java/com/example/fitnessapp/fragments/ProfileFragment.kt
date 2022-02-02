@@ -42,13 +42,13 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         var v = inflater.inflate(R.layout.fragment_profile, container, false)
 
-        var helloUser = v.findViewById<TextView>(R.id.textViewGreet)
+        var helloUser = v.findViewById<TextView>(R.id.textViewGreet2)
         helloUser.setText("Hi " + userMain?.username + "\nSee your stats down below!")
 
         val rightNow = Calendar.getInstance()
         val month_date = SimpleDateFormat("EEE dd MMM")
         val month_name: String = month_date.format(rightNow.getTime())
-        var date = v.findViewById<TextView>(R.id.textViewDate)
+        var date = v.findViewById<TextView>(R.id.textViewDate2)
         date.text = month_name
 
         return v

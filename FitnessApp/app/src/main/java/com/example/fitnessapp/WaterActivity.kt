@@ -51,18 +51,11 @@ class WaterActivity : AppCompatActivity() {
         {
             // queremos mostrar a informaçao caso ja tenhamos uma quantidade de agua adicionada
             var rightNow = Calendar.getInstance()
-            var day_date = SimpleDateFormat("dd")
-            var month_date = SimpleDateFormat("mm")
-            var day_now: Int = day_date.format(rightNow.getTime()).toInt()
-            var month_now: Int = month_date.format(rightNow.getTime()).toInt()
-
-            var day_water: Int
-            var month_water: Int
+            var date = SimpleDateFormat("yyyy-MM-dd")
+            var dateToday = date.format(rightNow.time)
 
             waters.forEach {
-                day_water = day_date.format(Calendar.getInstance().getTime()).toInt()
-                month_water = month_date.format(Calendar.getInstance().getTime()).toInt()
-                if(day_water == day_now && month_water == month_now)
+                if(dateToday == date.format(it.date))
                 {
                     waterValue += it.water!!
                 }

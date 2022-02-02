@@ -171,24 +171,28 @@ class MainActivity : AppCompatActivity() {
     fun openCaloriesCharts(view: View)
     {
         val intent = Intent(this, CaloriesChartActivity::class.java)
+        intent.putExtra("user", userMain as Serializable)
         startActivity(intent)
     }
 
     fun openWaterCharts(view: View)
     {
         val intent = Intent(this, WaterChartActivity::class.java)
+        intent.putExtra("user", userMain as Serializable)
         startActivity(intent)
     }
 
     fun openWeightCharts(view: View)
     {
         val intent = Intent(this, WeightChartActivity::class.java)
+        intent.putExtra("user", userMain as Serializable)
         startActivity(intent)
     }
 
     fun openStepsCharts(view: View)
     {
         val intent = Intent(this, StepsChartActivity::class.java)
+        intent.putExtra("user", userMain as Serializable)
         startActivity(intent)
     }
 
