@@ -24,16 +24,52 @@ class WaterChartActivity : AppCompatActivity() {
 
         val userFound = intent.extras?.get("user") as User
 
-        /*codigo de testeeeee
+        //codigo de testeeeee
         var calendarTeste: Calendar = Calendar.getInstance()
 
-        calendarTeste.add(Calendar.DAY_OF_YEAR, -3)
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
 
-        var water2: Water = Water(water = waterValueOnSubmit.toLong(), date=Calendar.getInstance().getTime(), userId = userMain?.userId)
+        var water2: Water = Water(water = 1600, date=Calendar.getInstance().getTime(), userId = userFound?.userId)
 
         myDatabase.DAO().insertWaters(water2)
 
-        //codigo de testeeee*/
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        water2 = Water(water = 2400, date=Calendar.getInstance().getTime(), userId = userFound?.userId)
+
+        myDatabase.DAO().insertWaters(water2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        water2 = Water(water = 2100, date=Calendar.getInstance().getTime(), userId = userFound?.userId)
+
+        myDatabase.DAO().insertWaters(water2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        water2 = Water(water = 1400, date=Calendar.getInstance().getTime(), userId = userFound?.userId)
+
+        myDatabase.DAO().insertWaters(water2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        water2 = Water(water = 1950, date=Calendar.getInstance().getTime(), userId = userFound?.userId)
+
+        myDatabase.DAO().insertWaters(water2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        water2 = Water(water = 2300, date=Calendar.getInstance().getTime(), userId = userFound?.userId)
+
+        myDatabase.DAO().insertWaters(water2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        water2 = Water(water = 2400, date=Calendar.getInstance().getTime(), userId = userFound?.userId)
+
+        myDatabase.DAO().insertWaters(water2)
+
+        //codigo de testeeee
 
         var waters: List<Water>? = userFound?.userId?.let { myDatabase.DAO().getWatersWithUserId(it) }
 

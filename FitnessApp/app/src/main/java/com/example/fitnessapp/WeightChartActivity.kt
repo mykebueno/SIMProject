@@ -24,16 +24,52 @@ class WeightChartActivity : AppCompatActivity() {
 
         val userFound = intent.extras?.get("user") as User
 
-        /*codigo de testeeeee
+        //codigo de testeeeee
         var calendarTeste: Calendar = Calendar.getInstance()
 
-        calendarTeste.add(Calendar.DAY_OF_YEAR, -3)
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
 
-        var weight2: Weight = Weight(weight = weightValue, date=Calendar.getInstance().time, userId = userMain?.userId)
+        var weight2: Weight = Weight(weight = 88, date=Calendar.getInstance().time, userId = userFound?.userId)
 
-        myDatabase.DAO().insertWheights(weight2)
+        myDatabase.DAO().insertWeights(weight2)
 
-        //codigo de testeeee*/
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        weight2 = Weight(weight = 90, date=Calendar.getInstance().time, userId = userFound?.userId)
+
+        myDatabase.DAO().insertWeights(weight2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        weight2 = Weight(weight = 91, date=Calendar.getInstance().time, userId = userFound?.userId)
+
+        myDatabase.DAO().insertWeights(weight2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        weight2 = Weight(weight = 91, date=Calendar.getInstance().time, userId = userFound?.userId)
+
+        myDatabase.DAO().insertWeights(weight2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        weight2 = Weight(weight = 92, date=Calendar.getInstance().time, userId = userFound?.userId)
+
+        myDatabase.DAO().insertWeights(weight2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        weight2 = Weight(weight = 93, date=Calendar.getInstance().time, userId = userFound?.userId)
+
+        myDatabase.DAO().insertWeights(weight2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        weight2 = Weight(weight = 92, date=Calendar.getInstance().time, userId = userFound?.userId)
+
+        myDatabase.DAO().insertWeights(weight2)
+
+        //codigo de testeeee
 
         var weights: List<Weight>? = userFound.userId?.let { myDatabase.DAO().getWeightWithUserId(it) }
 
@@ -78,7 +114,7 @@ class WeightChartActivity : AppCompatActivity() {
 
         val aaChartModel : AAChartModel = AAChartModel()
             .chartType(AAChartType.Area)
-            .title("Wheight")
+            .title("Weight")
             .subtitle("Last 7 days")
             .yAxisLabelsEnabled(true)
             .xAxisLabelsEnabled((true))

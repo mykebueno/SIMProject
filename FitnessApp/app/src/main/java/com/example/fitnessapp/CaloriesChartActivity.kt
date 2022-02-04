@@ -46,12 +46,49 @@ class CaloriesChartActivity : AppCompatActivity() {
 
         val userFound = intent.extras?.get("user") as User
 
-        /*codigo de testeeeee
+
+        //codigo de testeeeee
         var calendarTeste: Calendar = Calendar.getInstance()
 
-        calendarTeste.add(Calendar.DAY_OF_YEAR, -3)
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
 
         var calories2: Calories = Calories(calories = 400, date=calendarTeste.time, userId = userFound?.userId)
+
+        myDatabase.DAO().insertCalories(calories2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        calories2 = Calories(calories = 800, date=calendarTeste.time, userId = userFound?.userId)
+
+        myDatabase.DAO().insertCalories(calories2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        calories2 = Calories(calories = 1200, date=calendarTeste.time, userId = userFound?.userId)
+
+        myDatabase.DAO().insertCalories(calories2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        calories2 = Calories(calories = 2000, date=calendarTeste.time, userId = userFound?.userId)
+
+        myDatabase.DAO().insertCalories(calories2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        calories2 = Calories(calories = 1740, date=calendarTeste.time, userId = userFound?.userId)
+
+        myDatabase.DAO().insertCalories(calories2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        calories2 = Calories(calories = 1200, date=calendarTeste.time, userId = userFound?.userId)
+
+        myDatabase.DAO().insertCalories(calories2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        calories2 = Calories(calories = 900, date=calendarTeste.time, userId = userFound?.userId)
 
         myDatabase.DAO().insertCalories(calories2)
 

@@ -24,12 +24,48 @@ class StepsChartActivity : AppCompatActivity() {
 
         val userFound = intent.extras?.get("user") as User
 
-        /*codigo de testeeeee
+        //codigo de testeeeee
         var calendarTeste: Calendar = Calendar.getInstance()
 
-        calendarTeste.add(Calendar.DAY_OF_YEAR, -3)
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
 
-        var steps2: Steps = Steps(date = Calendar.getInstance().time, userId = userMain?.userId , steps = sharedViewModel.sensorModel.currentSteps.value)
+        var steps2: Steps = Steps(date = Calendar.getInstance().time, userId = userFound?.userId , steps = 2000)
+
+        myDatabase.DAO().insertSteps(steps2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        steps2 = Steps(date = Calendar.getInstance().time, userId = userFound?.userId , steps = 1600)
+
+        myDatabase.DAO().insertSteps(steps2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        steps2 = Steps(date = Calendar.getInstance().time, userId = userFound?.userId , steps = 1200)
+
+        myDatabase.DAO().insertSteps(steps2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        steps2 = Steps(date = Calendar.getInstance().time, userId = userFound?.userId , steps = 2100)
+
+        myDatabase.DAO().insertSteps(steps2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        steps2 = Steps(date = Calendar.getInstance().time, userId = userFound?.userId , steps = 1700)
+
+        myDatabase.DAO().insertSteps(steps2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        steps2 = Steps(date = Calendar.getInstance().time, userId = userFound?.userId , steps = 600)
+
+        myDatabase.DAO().insertSteps(steps2)
+
+        calendarTeste.add(Calendar.DAY_OF_YEAR, -1)
+
+        steps2 = Steps(date = Calendar.getInstance().time, userId = userFound?.userId , steps = 1600)
 
         myDatabase.DAO().insertSteps(steps2)
 
